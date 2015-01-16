@@ -287,7 +287,7 @@ netutil_get_remote_server_data(char *server, int port,
         char b[20] = {0};
         sprintf(b, "%d\r\n", body_len);
 
-        if(is_timeout == 1 || !strnstr(data, b, data_len - body_len) || !strnstr(data, " 200 ", data_len - body_len)) {
+        if(is_timeout == 1 || !strnstr(data, b, data_len - body_len) || !strnstr(data, " 206 ", data_len - body_len)) {
             free(data);
             data = NULL;
             ptr = NULL;
